@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: #f2f7f5;
+  color: #19332f;
+  --surface: #fff;
+  --muted: #425e58;
+  --border: #c9dcd6;
+  --accent: #075b50;
+  --button: #075b50;
+  --button-text: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background: #112421;
+    color: #e8f4ef;
+    --surface: #19312c;
+    --muted: #bad3ca;
+    --border: #405e55;
+    --accent: #9bdeca;
+    --button: #9bdeca;
+    --button-text: #102825;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; line-height: 1.65; }
+
+.nav, main, footer {
+  width: min(calc(100% - 2.5rem), 44rem);
+  margin-inline: auto;
+}
+
+.nav {
+  min-height: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav nav, .brand { display: flex; align-items: center; gap: .9rem; }
+.brand { gap: .55rem; color: inherit; text-decoration: none; font-weight: 700; }
+.brand img { border-radius: .4rem; }
+a { color: var(--accent); text-underline-offset: .2em; }
+a[aria-current="page"] { font-weight: 700; }
+main { padding-top: clamp(1.6rem, 6vw, 3.5rem); }
+
+.intro { margin-bottom: 1.4rem; }
+h1, h2 { line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(1.9rem, 7vw, 3rem); letter-spacing: -.035em; }
+h2 { font-size: 1.25rem; }
+p { margin: .65rem 0 0; color: var(--muted); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1rem, 4vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+
+.contact a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .55rem .85rem;
+  border-radius: .5rem;
+  color: var(--button-text);
+  background: var(--button);
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+details { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--border); }
+summary { cursor: pointer; font-weight: 600; }
+footer { padding-block: .6rem 2.5rem; font-size: .9rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: .24rem; }
